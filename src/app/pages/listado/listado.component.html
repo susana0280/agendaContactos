@@ -1,0 +1,46 @@
+
+<div class="container">
+
+<app-buscar [contactList]="constactList"></app-buscar>
+
+<h1>AGENDA</h1>
+
+
+<table class="table table-success table-striped" >
+    <thead class="thead">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">email</th>
+        <th scope="col">addres</th>
+        <th scope="col">city</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (contact of constactList; track $index) {
+       
+        <tr>
+        <th scope="row" >{{contact.id}}</th>
+        <td>{{contact.name}}</td>
+        <td>{{contact.username}}</td>
+        <td>{{contact.email}}</td>
+        <td scope="col">{{contact.street}}</td>
+        <td scope="col">{{contact.city}}</td>
+        <td scope="col">{{contact.phone}}</td>
+        <td scope="col"><button type="button"  (click)="eliminar(contact.id)"  class="btn btn-secondary">Eliminar Contacto</button></td>
+        <td scope="col"> <button type="button" (click)="updateContact(contact.id)"class="btn btn-secondary"  >Actualizar</button></td>
+       
+      </tr>
+    }
+    </tbody>
+  </table>
+
+  <div class="div_buttons">
+    <button type="button" class="btn btn-success agregar" (click)="addContact()">Agregar</button>
+  </div>
+
+</div>

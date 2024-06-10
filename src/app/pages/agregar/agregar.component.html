@@ -1,0 +1,91 @@
+<div class="container">
+
+<h1>DATOS CONTACTO</h1>
+
+
+<form [formGroup]="formularioContacto"  class="row g-3 table table-success table-striped">
+  
+ 
+    <div class="col-md-4">
+      <label for="validationServer01" class="form-label" >Name</label>
+      <input  [ngClass]="{'is-invalid':hasError('name','required') || hasError('name','minlength') }"  type="text"  class="form-control " id="validationServer01" formControlName="name" >
+      <div class="text-danger" *ngIf="hasError('name','required')">
+       Name is required
+      </div>
+      <div class="text-danger" *ngIf="hasError('name','minlength')">
+        Name must be a minimum of three characters
+       </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <label for="validationServer02" class="form-label">Username</label>
+      <input [ngClass]="{'is-invalid':hasError('username','required') || hasError('username','minlength') }" type="text" class="form-control" id="validationServer02" formControlName="username">
+      <div class="text-danger" *ngIf="hasError('username','required')">
+        Username is required
+       </div>
+       <div class="text-danger" *ngIf="hasError('username','minlength')">
+         Username must be a minimum of three characters
+        </div>
+     </div>
+    
+
+    <div class="col-md-6">
+        <label for="validationServer03" class="form-label">Email</label>
+        <input [ngClass]="{'is-invalid':hasError('email','required') || hasError('email','email') }"    type="email" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" formControlName="email">
+        <div class="text-danger" *ngIf="hasError('email','required')">
+            Email is required
+           </div>
+           <div class="text-danger" *ngIf="hasError('email','email')">
+            Please provide a valid email.
+            </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <label for="validationServer03" class="form-label">Street</label>
+        <input [ngClass]="{'is-invalid':hasError('street','required') || hasError('street','minlength') }"  type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" formControlName="street">
+        <div class="text-danger" *ngIf="hasError('street','required')">
+            Street is required
+           </div>
+           <div class="text-danger" *ngIf="hasError('street','minlength')">
+            Username must be a minimum of three characters
+        </div>
+      </div>
+
+
+    <div class="col-md-6">
+      <label for="validationServer03" class="form-label">City</label>
+      <input  [ngClass]="{'is-invalid':hasError('city','required') || hasError('city','minlength') }" type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" formControlName="city">
+      <div class="text-danger" *ngIf="hasError('city','required')">
+        City is required
+       </div>
+       <div class="text-danger" *ngIf="hasError('city','minlength')">
+        City must be a minimum of three characters
+    </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <label for="validationServer03" class="form-label">Phone</label>
+        <input  [ngClass]="{'is-invalid':hasError('phone','required') || hasError('phone','maxlength') }"     type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" formControlName="phone">
+        <div class="text-danger" *ngIf="hasError('phone','required')">
+            Phone is required
+           </div>
+           <div class="text-danger" *ngIf="hasError('phone','maxlength')">
+            Phone must be a minimum of three characters
+        </div>
+      </div>
+    
+    <div class="col-12">
+      <button class="btn btn-dark" (click)="agregar()"  type="submit">Agregar Contacto</button>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-dark" (click)="actualizar()"  type="submit">Actualizar Contacto</button>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-dark" (click)="volver()"  type="submit">Volver a Inicio</button>
+    </div>
+  </form>
+ 
+</div>

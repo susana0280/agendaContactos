@@ -1,0 +1,36 @@
+<div class="container">
+<h1>Su busqueda ha dado el siguiente resultado</h1>
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">email</th>
+        <th scope="col">addres</th>
+        <th scope="col">city</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      @for (contact of contactBuscado; track $index) {
+        <tr>
+       
+        <th scope="row">{{contact.id}}</th>
+        <td>{{contact.name}}</td>
+        <td>{{contact.username}}</td>
+        <td>{{contact.email}}</td>
+        <th scope="col">{{contact.street}}</th>
+        <th scope="col">{{contact.city}}</th>
+        <th scope="col">{{contact.phone}}</th>
+       
+      </tr>
+    }
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success agregar volver" (click)="volver()">Volver a Inicio</button>
+</div>

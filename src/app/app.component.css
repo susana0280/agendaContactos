@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 0;
+    /* Agregar otros estilos a 0 según sea necesario */
+}
+html{
+    background-color: grey;
+}
+body{
+    background-color: grey;
+}

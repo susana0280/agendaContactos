@@ -1,0 +1,6 @@
+<div class="container">
+<h1>Introduzca apellido a buscar</h1>
+
+<input type="text" [(ngModel)]="apellido"  onchange="apellido($event)" class="table table-success table-striped">
+<button  class="btn btn-success agregar"  (click)="buscar($event)" >Buscar</button>
+</div>
